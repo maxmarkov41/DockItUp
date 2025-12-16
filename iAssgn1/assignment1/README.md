@@ -2,14 +2,15 @@
 
 **Goal:** Create your own Dockerized static website and run it using custom ports.
 ```
- assignment1
+assignment1
 ├── cmds.txt
 ├── Dockerfile
+├── images
+│   ├── created.png
+│   ├── curl.png
+│   └── web.png
 ├── index.html
-├── README.md
-├── Screenshot 2025-12-15 at 4.26.57 PM.png
-├── Screenshot 2025-12-15 at 4.27.19 PM.png
-└── Screenshot 2025-12-15 at 4.28.08 PM.png
+└── README.md
 ```
 Approach: We are asked to use Apache or Nginx, this is a step up from using python's http.server, so I had to refer to documentation / tutorial on using Nginx with Docker. This is the [article](https://dev.to/arif_hossain/running-an-nginx-web-server-in-a-docker-container-4cie) I used to learn about using nginx with docker.
 
@@ -58,4 +59,5 @@ docker stop site1
 docker rm site1
 docker rmi yourname-site
 ```
+
 
