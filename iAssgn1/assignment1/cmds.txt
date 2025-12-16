@@ -1,0 +1,7 @@
+docker pull nginx
+docker build -t yourname-site .
+docker run -d --name site1 -p 7070:80 yourname-site
+curl http://localhost:7070
+docker stop
+docker rm site1
+docker rmi yourname-site

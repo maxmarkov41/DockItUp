@@ -1,0 +1,12 @@
+docker network create webnet
+docker pull hashicorp/http-echo
+docker run -d --name api --network webnet hashicorp/http-echo -text="Hello from API"
+docker build -t custom-nginx .
+docker run -d --name web --network webnet -p 7070:80 custom-nginx 
+docker exec -it web curl http://api:5678
+docker stop web
+docker rm web
+docker stop api
+docker rm api
+docker network rm webnet
+docker rmi custom-nginx
