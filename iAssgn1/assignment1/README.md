@@ -11,7 +11,7 @@
 ├── Screenshot 2025-12-15 at 4.27.19 PM.png
 └── Screenshot 2025-12-15 at 4.28.08 PM.png
 ```
-Approach: We are asked to use Apache or Nginx, this is a step up from using python's http.server, so I had to refer to document / tutorial on using Nginx with Docker. This is the [article](https://dev.to/arif_hossain/running-an-nginx-web-server-in-a-docker-container-4cie) I used to learn about using nginx with docker.
+Approach: We are asked to use Apache or Nginx, this is a step up from using python's http.server, so I had to refer to documentation / tutorial on using Nginx with Docker. This is the [article](https://dev.to/arif_hossain/running-an-nginx-web-server-in-a-docker-container-4cie) I used to learn about using nginx with docker.
 
 ### 1.Pull the lastest nginx image from DockerHub
 ```
@@ -20,13 +20,13 @@ docker pull nginx
 
 ### 2 .Write a Dockerfile and build the Image
 Copy your static html page from the current working directory to `/usr/share/nginx/html`
-the docker file should look like this
+,the docker file should look like this
 ```
 FROM nginx
 COPY index.html /usr/share/nginx/html
 EXPOSE 80
 ```
-port 80 has been exposed since, it is the default port that nginx uses for http connections, a different port number could be used, however nginx conf that is located at `/etc/nginx/conf.d/default.conf` must be edited.
+port 80 has been exposed since it is the default port that nginx uses for http connections, a different port number could be used, however nginx conf that is located at `/etc/nginx/conf.d/default.conf` must be edited.
 
 ```
 docker build -t yourname-site .
@@ -58,3 +58,4 @@ docker stop site1
 docker rm site1
 docker rmi yourname-site
 ```
+
